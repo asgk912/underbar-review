@@ -120,8 +120,27 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
-  };
+    // forget about isSorted and iterator for moments
+    let results = array.slice();
+    // For loop to go through every element of the array
+    // Loop through from the back to the front 
+    // Use splice to remove duplicates from the results array
+    // Check if it is duplicate
+    
+    // throw element into indexOf
+    // indexOf(element) === index working on if unique
+    // indexOf(element) !== index working on if not unique
+    
+    for (let i = array.length - 1; i >= 0; i--) {
+      if (array.indexOf(array[i]) === i) {
+        continue;
+      } else { 
+        results.splice(i, 1);
+      }
+    }
 
+    return results;    
+  };
 
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
