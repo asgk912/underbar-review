@@ -481,6 +481,13 @@
         expect(shuffled).to.eql([4, 5, 6]);
       });
 
+      it('should maintain same array length', function() {
+        var numbers = [1, 1, 2, 3];
+        var shuffled = _.shuffle(numbers);
+
+        expect(shuffled.length).to.equal(numbers.length);
+      });
+
       it('should not be in the same order as the original object', function() {
         var numbers = [4, 5, 6, 7, 8, 9, 10];
         var shuffled = _.shuffle(numbers);
